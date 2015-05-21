@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FB5E28F1B0E7EB900F89A86 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FB5E28E1B0E7EB900F89A86 /* data.plist */; };
+		3FB5E2911B0E7FF500F89A86 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5E2901B0E7FF500F89A86 /* DAO.swift */; };
 		AB25A8291B0E5F0200C0EFAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25A8281B0E5F0200C0EFAF /* AppDelegate.swift */; };
 		AB25A82E1B0E5F0200C0EFAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB25A82C1B0E5F0200C0EFAF /* Main.storyboard */; };
 		AB25A8301B0E5F0200C0EFAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB25A82F1B0E5F0200C0EFAF /* Images.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FB5E28E1B0E7EB900F89A86 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		3FB5E2901B0E7FF500F89A86 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		AB25A8231B0E5F0200C0EFAF /* BeArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB25A8271B0E5F0200C0EFAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB25A8281B0E5F0200C0EFAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				AB25A8271B0E5F0200C0EFAF /* Info.plist */,
+				3FB5E28E1B0E7EB900F89A86 /* data.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 		AB25A8521B0E7DB000C0EFAF /* MODEL */ = {
 			isa = PBXGroup;
 			children = (
+				3FB5E2901B0E7FF500F89A86 /* DAO.swift */,
 			);
 			name = MODEL;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 				AB25A82E1B0E5F0200C0EFAF /* Main.storyboard in Resources */,
 				AB25A8331B0E5F0200C0EFAF /* LaunchScreen.xib in Resources */,
 				AB25A8301B0E5F0200C0EFAF /* Images.xcassets in Resources */,
+				3FB5E28F1B0E7EB900F89A86 /* data.plist in Resources */,
 				AB25A84F1B0E61E500C0EFAF /* mickeymouse.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB5E2911B0E7FF500F89A86 /* DAO.swift in Sources */,
 				AB25A8491B0E5F7B00C0EFAF /* TutorialVC.swift in Sources */,
 				AB25A84B1B0E60BA00C0EFAF /* TutorialCell.swift in Sources */,
 				AB25A8511B0E778E00C0EFAF /* CameraVC.swift in Sources */,
