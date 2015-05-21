@@ -14,39 +14,22 @@ class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
     @IBOutlet var label: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
+    var listSteps : Array<StepModel>!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 14
+        return listSteps.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let picture = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! StepCell
         
-        picture.stepPicture.image = UIImage(named: "mickeymouse.jpg")
-        
-        let row = indexPath.item
-        
+        picture.stepPicture.image = UIImage(named: listSteps[indexPath.row].image + ".jpg")
+
         return picture
     }
-    
 }
-
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-//
-//}

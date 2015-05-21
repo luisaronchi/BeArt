@@ -10,7 +10,7 @@ import UIKit
 
 class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var items: [String] = ["Figuras Geométricas", "Personagem", "Animal"]
+    var tutorialList : Array<TutorialModel>!
     
     @IBOutlet var tableView: UITableView!
     
@@ -18,13 +18,12 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tutorialList =  DAO.sharedInstance.getTutorialList()
         
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,17 +32,18 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return tutorialList.count
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        var celula : TutorialCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TutorialCell
         
-        var celula:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TutorialCell
+        celula.textLabel?.text = tutorialList[indexPath.row].name
+        celula.textLabel?.frame = CGRectMake(0, 0, 100, 100)
         
-        celula.textLabel?.text = self.items[indexPath.item]
-    
+        celula.listSteps = tutorialList[indexPath.row].stepList
     
         return celula
         
