@@ -87,14 +87,11 @@
 			isa = PBXGroup;
 			children = (
 				AB25A8281B0E5F0200C0EFAF /* AppDelegate.swift */,
-				AB25A8501B0E778E00C0EFAF /* CameraVC.swift */,
-				AB25A8481B0E5F7B00C0EFAF /* TutorialVC.swift */,
-				AB25A84A1B0E60BA00C0EFAF /* TutorialCell.swift */,
-				AB25A82C1B0E5F0200C0EFAF /* Main.storyboard */,
+				AB25A8521B0E7DB000C0EFAF /* MODEL */,
+				AB25A8531B0E7DB700C0EFAF /* CONTROLLER */,
+				AB25A8541B0E7DC100C0EFAF /* VIEW */,
 				AB25A82F1B0E5F0200C0EFAF /* Images.xcassets */,
-				AB25A8311B0E5F0200C0EFAF /* LaunchScreen.xib */,
 				AB25A8261B0E5F0200C0EFAF /* Supporting Files */,
-				AB25A84C1B0E611600C0EFAF /* StepCell.swift */,
 			);
 			path = BeArt;
 			sourceTree = "<group>";
@@ -122,6 +119,33 @@
 				AB25A83D1B0E5F0200C0EFAF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB25A8521B0E7DB000C0EFAF /* MODEL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MODEL;
+			sourceTree = "<group>";
+		};
+		AB25A8531B0E7DB700C0EFAF /* CONTROLLER */ = {
+			isa = PBXGroup;
+			children = (
+				AB25A8501B0E778E00C0EFAF /* CameraVC.swift */,
+				AB25A8481B0E5F7B00C0EFAF /* TutorialVC.swift */,
+			);
+			name = CONTROLLER;
+			sourceTree = "<group>";
+		};
+		AB25A8541B0E7DC100C0EFAF /* VIEW */ = {
+			isa = PBXGroup;
+			children = (
+				AB25A8311B0E5F0200C0EFAF /* LaunchScreen.xib */,
+				AB25A82C1B0E5F0200C0EFAF /* Main.storyboard */,
+				AB25A84A1B0E60BA00C0EFAF /* TutorialCell.swift */,
+				AB25A84C1B0E611600C0EFAF /* StepCell.swift */,
+			);
+			name = VIEW;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
