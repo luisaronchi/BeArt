@@ -14,13 +14,14 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
     
-
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tutorialList =  DAO.sharedInstance.getTutorialList()
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         

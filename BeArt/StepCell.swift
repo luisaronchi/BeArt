@@ -11,4 +11,5 @@ import UIKit
 class StepCell: UICollectionViewCell {
     
     @IBOutlet var stepPicture: UIImageView!
+
 }
