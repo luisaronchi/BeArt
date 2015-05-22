@@ -14,6 +14,8 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
     
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,9 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         var celula : TutorialCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TutorialCell
         
-        celula.textLabel?.text = tutorialList[indexPath.row].name
-        celula.textLabel?.frame = CGRectMake(0, 0, 100, 100)
+        //celula.textLabel?.text = tutorialList[indexPath.row].name
+        //celula.textLabel?.frame = CGRectMake(0, 0, 100, 100)
+        celula.label.text = tutorialList[indexPath.row].name
         
         celula.listSteps = tutorialList[indexPath.row].stepList
     
