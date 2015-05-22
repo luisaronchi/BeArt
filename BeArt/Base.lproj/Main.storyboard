@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5dw-s0-WZy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--TutorialVC-->
@@ -40,7 +42,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="101" height="102"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbm-Hj-dQd">
@@ -187,8 +189,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Dj-mO-uiO" userLabel="frames">
+                                <rect key="frame" x="16" y="16" width="568" height="568"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="2Dj-mO-uiO" secondAttribute="width" multiplier="1:1" id="zbr-U2-liu"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aB-iZ-2FY">
-                                <rect key="frame" x="18" y="82" width="50" height="30"/>
+                                <rect key="frame" x="18" y="38" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="QfP-7n-KXC"/>
                                     <constraint firstAttribute="height" constant="30" id="l58-kk-QWQ"/>
@@ -200,19 +208,54 @@
                                     <segue destination="vXZ-lx-hvc" kind="show" id="Olg-yR-GD5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qck-LP-buA">
+                                <rect key="frame" x="536" y="38" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="2iN-B4-Jep"/>
+                                    <constraint firstAttribute="height" constant="30" id="iqZ-js-lzS"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePhoto:" destination="DGN-xh-ABk" eventType="touchUpInside" id="gch-NS-OVw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua0-tL-3ut" userLabel="Play">
+                                <rect key="frame" x="277" y="550" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="TqL-5p-p0S"/>
+                                    <constraint firstAttribute="height" constant="30" id="X0S-H2-krP"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAnimation:" destination="DGN-xh-ABk" eventType="touchUpInside" id="3id-mh-N4Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="2Dj-mO-uiO" secondAttribute="centerY" id="1E5-hm-ea3"/>
+                            <constraint firstAttribute="trailing" secondItem="qck-LP-buA" secondAttribute="trailing" constant="18" id="1Vz-tk-jxb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Dj-mO-uiO" secondAttribute="trailing" id="4C3-nJ-7J4"/>
                             <constraint firstAttribute="trailing" secondItem="o3C-Aa-kCe" secondAttribute="trailing" id="7AL-qY-SNM"/>
                             <constraint firstItem="o3C-Aa-kCe" firstAttribute="top" secondItem="szs-wk-peM" secondAttribute="top" id="CdC-eZ-pk1"/>
                             <constraint firstItem="lAh-MH-seC" firstAttribute="top" secondItem="o3C-Aa-kCe" secondAttribute="bottom" id="JCL-ie-5q7"/>
                             <constraint firstItem="o3C-Aa-kCe" firstAttribute="leading" secondItem="szs-wk-peM" secondAttribute="leading" id="OP9-He-f91"/>
                             <constraint firstItem="3aB-iZ-2FY" firstAttribute="leading" secondItem="szs-wk-peM" secondAttribute="leading" constant="18" id="REG-es-2fQ"/>
+                            <constraint firstItem="2Dj-mO-uiO" firstAttribute="leading" secondItem="szs-wk-peM" secondAttribute="leadingMargin" id="VBm-FJ-SDX"/>
                             <constraint firstItem="3aB-iZ-2FY" firstAttribute="top" secondItem="LR1-Tx-Vr3" secondAttribute="bottom" constant="18" id="bRW-Y4-vEq"/>
+                            <constraint firstItem="lAh-MH-seC" firstAttribute="top" secondItem="ua0-tL-3ut" secondAttribute="bottom" constant="20" id="d6u-ZF-2Hn"/>
+                            <constraint firstAttribute="centerX" secondItem="2Dj-mO-uiO" secondAttribute="centerX" id="rUF-Kt-lXQ"/>
+                            <constraint firstItem="qck-LP-buA" firstAttribute="top" secondItem="LR1-Tx-Vr3" secondAttribute="bottom" constant="18" id="xCk-nC-0Oa"/>
+                            <constraint firstAttribute="centerX" secondItem="ua0-tL-3ut" secondAttribute="centerX" id="yaf-JZ-Iz1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="o3C-Aa-kCe" id="i0I-50-Yik"/>
+                        <outlet property="framesView" destination="2Dj-mO-uiO" id="Ndj-QP-LFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="068-EB-w0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
