@@ -20,52 +20,52 @@ class CameraVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//https://github.com/imaginary-cloud/CameraManager
+        //https://github.com/imaginary-cloud/CameraManager
         
-
+        //define a view na qual a camera aparece
         CameraManager.sharedInstance.addPreviewLayerToView(self.cameraView)
-        
+        //esconde navbar
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+        //configuracoes da camera
         CameraManager.sharedInstance.cameraOutputMode = .StillImage
-        CameraManager.sharedInstance.writeFilesToPhoneLibrary = true
-        CameraManager.sharedInstance.cameraOutputQuality = .High
-        CameraManager.sharedInstance.showAccessPermissionPopupAutomatically = false
-        
-        // Do any additional setup after loading the view.
+        CameraManager.sharedInstance.writeFilesToPhoneLibrary = true //salva no camroll
+        CameraManager.sharedInstance.cameraOutputQuality = .High //resolucao
+        CameraManager.sharedInstance.showAccessPermissionPopupAutomatically = false //permissao pra acessar camera
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func savePhoto(sender: AnyObject) {
+        //tira a foto
         CameraManager.sharedInstance.capturePictureWithCompletition({ (image, error) -> Void in
             self.myImage = image!
         })
-
-        
-        
     }
     
     @IBAction func playAnimation(sender: AnyObject) {
 
-        var imgListArray :NSMutableArray = []
+        var imgListArray = [UIImage]()//cria um vetor de imagems
         
-        for countValue in 1...5
+        var bundle : String! = NSBundle.mainBundle().pathForResource("tutorialId1/item_0", ofType: "") //encontra o diretorio onde as frames estão
+        let manager = NSFileManager.defaultManager() //aciona o gerenciador de arquivos
+        let files = manager.contentsOfDirectoryAtPath(bundle, error: nil) //pega conteudo do diretorio
+        var n: Int = files!.count //conta os elementos do conteudo do diretorio
+        
+        for countValue in 1...n //loop q repete N vezes
         {
-            
-            var strImageName : String = "\(countValue)StarsSmall.png"
-            var image  = UIImage(named:strImageName)
+            var strImageName = "tutorialId1_item0_frame\(countValue).png" //nome da imagem
+            var imagem = UIImage(contentsOfFile: "\(bundle)/\(strImageName)") //seta a imagem atraves do path dela(diretorio)
+            imgListArray.append(imagem!)//coloca ela no vetor
 
-            imgListArray .addObject(image!)
-
-            framesView.animationImages = imgListArray as [AnyObject]
-            framesView.animationDuration = 2.0
-            framesView.animationRepeatCount = 1
-            framesView.startAnimating()
         }
+        framesView.animationImages = imgListArray as [AnyObject] //As imagens que farão parte da animção são as do vetor
+        framesView.animationDuration = 2.0 //tempo de duração da animação
+        framesView.animationRepeatCount = 1 //Quantas vezes repete
+        framesView.startAnimating() //Depois de configura, Inicia a animacao
+    
     }
     
     
