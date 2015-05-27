@@ -14,7 +14,7 @@ class StepModel {
     var name: String!
     var description: String!
     var frameFolder: String!
-    var idTutorial: Int!
+    var idTutorial: String!
     var image: String!
 
 }

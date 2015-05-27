@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5dw-s0-WZy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5dw-s0-WZy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -95,7 +95,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="HnW-Bp-29d">
                             <connections>
-                                <segue destination="DGN-xh-ABk" kind="show" id="JIO-yO-iLV"/>
+                                <segue destination="DGN-xh-ABk" kind="show" identifier="toCamera" id="JIO-yO-iLV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -282,6 +282,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Olg-yR-GD5"/>
+        <segue reference="VZx-GV-oxJ"/>
     </inferredMetricsTieBreakers>
 </document>

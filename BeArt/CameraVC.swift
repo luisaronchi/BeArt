@@ -14,6 +14,7 @@ class CameraVC: UIViewController {
     
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var framesView: UIImageView!
+    var step : StepModel = StepModel();
     
     var myImage = UIImage()
     
@@ -49,23 +50,25 @@ class CameraVC: UIViewController {
 
         var imgListArray = [UIImage]()//cria um vetor de imagens
         
-        var bundle : String! = NSBundle.mainBundle().pathForResource("tutoriald1/item_0", ofType: "") //encontra o diretorio onde as frames estão
+        var bundle : String! = NSBundle.mainBundle().pathForResource(step.idTutorial + "/" + step.frameFolder, ofType: "") //encontra o diretorio onde as frames estão
         let manager = NSFileManager.defaultManager() //aciona o gerenciador de arquivos
         let files = manager.contentsOfDirectoryAtPath(bundle, error: nil) //pega conteudo do diretorio
         var n: Int = files!.count //conta os elementos do conteudo do diretorio
         
-        for countValue in 1...n //loop q repete N vezes
+        for countValue in 0...(n-1) //loop q repete N vezes
         {
-            var strImageName = "tutorialId1_item0_frame\(countValue).png" //nome da imagem
+            var strImageName = step.idTutorial + "_" + step.frameFolder + "_frame\(countValue).png" //nome da imagem
             var imagem = UIImage(contentsOfFile: "\(bundle)/\(strImageName)") //seta a imagem atraves do path dela(diretorio)
             imgListArray.append(imagem!)//coloca ela no vetor
-
         }
-        framesView.animationImages = imgListArray as [AnyObject] //As imagens que farão parte da animção são as do vetor
-        framesView.animationDuration = 2.0 //tempo de duração da animação
-        framesView.animationRepeatCount = 1 //Quantas vezes repete
+        
+        
+        framesView.animationImages = imgListArray as [AnyObject]
+        framesView.animationDuration = 5.0 //tempo de duração da animação
+        framesView.animationRepeatCount = 10 //Quantas vezes repete
         framesView.startAnimating() //Depois de configura, Inicia a animacao
-    
+        //As imagens que farão parte da animção são as do vetor
+       
     }
     
     

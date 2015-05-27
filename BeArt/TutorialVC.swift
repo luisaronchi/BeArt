@@ -13,8 +13,7 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var tutorialList : Array<TutorialModel>!
     
     @IBOutlet var tableView: UITableView!
-    
-    
+    var stepSelected : StepModel = StepModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +26,20 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "celTapped:", name:"tapCell", object: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var cameraVC : CameraVC = segue.destinationViewController as! CameraVC
+        cameraVC.step = stepSelected
+    }
+    
+    func celTapped(notification: NSNotification){
+        stepSelected = notification.object as! StepModel
+
+        performSegueWithIdentifier("toCamera", sender: self)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "tapCell", object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,6 +61,7 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         celula.label.text = tutorialList[indexPath.row].name
         
         celula.listSteps = tutorialList[indexPath.row].stepList
+        celula.tutorialIndex = indexPath.row + 1
     
         return celula
         

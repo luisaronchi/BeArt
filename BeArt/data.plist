@@ -18,7 +18,7 @@
 					<key>description</key>
 					<string>algoDesc</string>
 					<key>frameFolder</key>
-					<string>item 0</string>
+					<string>item_0</string>
 				</dict>
 				<dict>
 					<key>image</key>
@@ -30,7 +30,7 @@
 					<key>description</key>
 					<string>algoDesc</string>
 					<key>frameFolder</key>
-					<string>item 1</string>
+					<string>item_1</string>
 				</dict>
 			</array>
 			<key>name</key>
@@ -56,7 +56,7 @@
 					<key>description</key>
 					<string>algoDesc</string>
 					<key>frameFolder</key>
-					<string>item 0 </string>
+					<string>item_0 </string>
 				</dict>
 				<dict>
 					<key>image</key>
@@ -68,7 +68,7 @@
 					<key>description</key>
 					<string>algoDesc</string>
 					<key>frameFolder</key>
-					<string>item 1</string>
+					<string>item_1</string>
 				</dict>
 			</array>
 			<key>name</key>
