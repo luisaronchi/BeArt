@@ -47,9 +47,9 @@ class CameraVC: UIViewController {
     
     @IBAction func playAnimation(sender: AnyObject) {
 
-        var imgListArray = [UIImage]()//cria um vetor de imagems
+        var imgListArray = [UIImage]()//cria um vetor de imagens
         
-        var bundle : String! = NSBundle.mainBundle().pathForResource("tutorialId1/item_0", ofType: "") //encontra o diretorio onde as frames estão
+        var bundle : String! = NSBundle.mainBundle().pathForResource("tutoriald1/item_0", ofType: "") //encontra o diretorio onde as frames estão
         let manager = NSFileManager.defaultManager() //aciona o gerenciador de arquivos
         let files = manager.contentsOfDirectoryAtPath(bundle, error: nil) //pega conteudo do diretorio
         var n: Int = files!.count //conta os elementos do conteudo do diretorio
