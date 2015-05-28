@@ -71,6 +71,8 @@ class DAO {
             tutorialList.append(tutorialModel)
         }
         
+        // entender depois se está em ordem alfabética pelo id
+        tutorialList.sort({ $0.id < $1.id})
         return tutorialList
         
     }

@@ -12,6 +12,7 @@ class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
     
     @IBOutlet var label: UILabel!
     @IBOutlet var collectionView: UICollectionView!
+    var index:Int?
     
     var listSteps : Array<StepModel>!
     var tutorialIndex : Int!;
@@ -28,7 +29,16 @@ class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         
         let picture = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! StepCell
         
-        picture.stepPicture.image = UIImage(named: listSteps[indexPath.row].image + ".jpg")
+        // step.idTutorial + "/" + step.frameFolder
+        
+        let step = listSteps[indexPath.row]
+        
+        picture.stepPicture.image = UIImage(named: "tutorialId\(self.index!)/item\(indexPath.row)/" + listSteps[indexPath.row].image + ".png")
+        
+        
+        println("tutorialId\(self.index!)/item\(indexPath.row)/" + listSteps[indexPath.row].image + ".png")
+        
+
         picture.tag = indexPath.row;
 
         return picture
@@ -46,8 +56,11 @@ class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         //criamos uma notificação com identifier =  tapCell para ser 
         //visto pelo ViewController que observar essa notifação
         
+        println("didSelectItemAtIndexPath")
         NSNotificationCenter.defaultCenter().postNotificationName("tapCell", object: step)
         
     }
+    
+    
     
 }

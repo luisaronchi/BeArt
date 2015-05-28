@@ -31,15 +31,28 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var cameraVC : CameraVC = segue.destinationViewController as! CameraVC
-        cameraVC.step = stepSelected
+        
+        if segue.identifier == "toHow" {
+            
+            var howToVC = segue.destinationViewController as! HowToVC
+            
+            
+        } else {
+            
+            var cameraVC : CameraVC = segue.destinationViewController as! CameraVC
+            cameraVC.step = stepSelected
+        }
+        
+        
     }
     
     func celTapped(notification: NSNotification){
+        
+        println("celTapped")
         stepSelected = notification.object as! StepModel
 
         performSegueWithIdentifier("toCamera", sender: self)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "tapCell", object: nil)
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: "tapCell", object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,17 +67,26 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+
+        
         var celula : TutorialCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TutorialCell
         
         //celula.textLabel?.text = tutorialList[indexPath.row].name
         //celula.textLabel?.frame = CGRectMake(0, 0, 100, 100)
         celula.label.text = tutorialList[indexPath.row].name
-        
+        celula.index = indexPath.row + 1
         celula.listSteps = tutorialList[indexPath.row].stepList
         celula.tutorialIndex = indexPath.row + 1
     
+    
+//                var scrollview = UIScrollView(frame: celula.bounds)
+//                scrollview.contentSize = CGSizeMake(celula.bounds.width * 5, celula.bounds.height) // will be 5 times as wide as the cell
+//                scrollview.pagingEnabled = true
+//        
+//                celula.contentView.addSubview(scrollview)
+        //
         return celula
-        
+
     }
 
 

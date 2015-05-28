@@ -10,7 +10,7 @@
 			<array>
 				<dict>
 					<key>image</key>
-					<string>mickey</string>
+					<string>tutorialId1_item0_frame25</string>
 					<key>id</key>
 					<string>step1Tutorial1</string>
 					<key>name</key>
@@ -22,7 +22,7 @@
 				</dict>
 				<dict>
 					<key>image</key>
-					<string>minnie</string>
+					<string>tutorialId1_item1_frame30</string>
 					<key>id</key>
 					<string>step2Tutorial1</string>
 					<key>name</key>
@@ -32,11 +32,35 @@
 					<key>frameFolder</key>
 					<string>item_1</string>
 				</dict>
+				<dict>
+					<key>image</key>
+					<string>tutorialId1_item2_frame12</string>
+					<key>id</key>
+					<string>step3Tutorial1</string>
+					<key>name</key>
+					<string>algoName</string>
+					<key>description</key>
+					<string>algoDesc</string>
+					<key>frameFolder</key>
+					<string>item_2</string>
+				</dict>
+				<dict>
+					<key>image</key>
+					<string>tutorialId1_item3_frame106</string>
+					<key>id</key>
+					<string>step3Tutorial1</string>
+					<key>name</key>
+					<string>algoName</string>
+					<key>description</key>
+					<string>algoDesc</string>
+					<key>frameFolder</key>
+					<string>item_4</string>
+				</dict>
 			</array>
 			<key>name</key>
 			<string>Figuras Geométricas</string>
 			<key>stepTotal</key>
-			<integer>5</integer>
+			<integer>4</integer>
 			<key>stepCompleted</key>
 			<integer>3</integer>
 			<key>completed</key>
@@ -48,7 +72,7 @@
 			<array>
 				<dict>
 					<key>image</key>
-					<string>patoDonald</string>
+					<string>tutorialId1_item0_frame25</string>
 					<key>id</key>
 					<string>step1Tutorial2</string>
 					<key>name</key>
@@ -60,7 +84,7 @@
 				</dict>
 				<dict>
 					<key>image</key>
-					<string>pateta</string>
+					<string>tutorialId1_item1_frame30</string>
 					<key>id</key>
 					<string>step2Tutorial2</string>
 					<key>name</key>
@@ -78,7 +102,7 @@
 			<key>stepCompleted</key>
 			<integer>3</integer>
 			<key>completed</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 </dict>

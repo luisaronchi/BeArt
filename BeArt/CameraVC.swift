@@ -64,13 +64,21 @@ class CameraVC: UIViewController {
         
         
         framesView.animationImages = imgListArray as [AnyObject]
-        framesView.animationDuration = 5.0 //tempo de duração da animação
-        framesView.animationRepeatCount = 10 //Quantas vezes repete
+        framesView.animationDuration = 10.0 //tempo de duração da animação
+        framesView.animationRepeatCount = 0 //Quantas vezes repete
         framesView.startAnimating() //Depois de configura, Inicia a animacao
         //As imagens que farão parte da animção são as do vetor
        
+        
+        
     }
     
+    @IBAction func back(sender: UIButton) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
+    }
     
     /*
     // MARK: - Navigation
