@@ -242,7 +242,6 @@
 				TargetAttributes = {
 					AB25A8221B0E5F0200C0EFAF = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = GMC28UA2B8;
 					};
 					AB25A8371B0E5F0200C0EFAF = {
 						CreatedOnToolsVersion = 6.3.1;
