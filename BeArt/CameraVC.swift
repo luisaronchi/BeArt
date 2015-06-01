@@ -14,12 +14,19 @@ class CameraVC: UIViewController {
     
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var framesView: UIImageView!
+    @IBOutlet weak var opacitySlider: UISlider!
+    
+    
     var step : StepModel = StepModel();
     
     var myImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //transforma o slider em vertical
+        var trans : CGAffineTransform = CGAffineTransformMakeRotation(CGFloat(M_PI_2));
+        opacitySlider.transform = trans;
         
         //https://github.com/imaginary-cloud/CameraManager
         
@@ -62,16 +69,38 @@ class CameraVC: UIViewController {
             imgListArray.append(imagem!)//coloca ela no vetor
         }
         
+        if  n <= 50 {
         
         framesView.animationImages = imgListArray as [AnyObject]
         framesView.animationDuration = 10.0 //tempo de duração da animação
         framesView.animationRepeatCount = 0 //Quantas vezes repete
         framesView.startAnimating() //Depois de configura, Inicia a animacao
         //As imagens que farão parte da animção são as do vetor
-       
+            
+        }
         
+        else {
+            
+        framesView.animationImages = imgListArray as [AnyObject]
+        framesView.animationDuration = 30.0 //tempo de duração da animação
+        framesView.animationRepeatCount = 0 //Quantas vezes repete
+        framesView.startAnimating() //Depois de configurar, inicia a animacao
+        //As imagens que farão parte da animção são as do vetor
+        //if statement pra mudar a velocidade da animação de acordo com a quantidade de frames
+    
+        }
         
     }
+    
+    @IBAction func opacity(sender: AnyObject) {
+    
+        let sliderValue = CGFloat(opacitySlider.value)
+        self.framesView.alpha = sliderValue
+    
+    }
+    
+    
+    
     
     @IBAction func back(sender: UIButton) {
         
