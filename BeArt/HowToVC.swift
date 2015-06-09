@@ -12,7 +12,7 @@ class HowToVC: UIViewController, UICollectionViewDataSource ,UICollectionViewDel
     
     
 @IBOutlet weak var collectionSupport: UICollectionView!
-var stepList = ["step1.jpg", "step2.jpg", "step3.jpg"] //lista com nomes das imagens
+var materialList = ["pencil.png", "paper.jpg", "stand.jpeg"] //lista com nomes das imagens
 
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,7 +33,7 @@ override func viewDidLoad() {
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
-        return stepList.count
+        return materialList.count
     }
 
 
@@ -44,7 +44,7 @@ override func viewDidLoad() {
         
         let supportType = UIImageView()                 //criando image view
         supportType.frame = tripe.frame                //setando o tamanho da image view(igual ao da celula)
-        supportType.image = UIImage(named: stepList[indexPath.row])//setando a image da image view
+        supportType.image = UIImage(named: materialList[indexPath.row])//setando a image da image view
         //UIImage busca pelo nome da imagem, entao basta passar o nome da imagem pra ela.
         tripe.addSubview(supportType)                   //colocando a imageview na celula
         
