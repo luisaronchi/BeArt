@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5dw-s0-WZy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5dw-s0-WZy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -243,7 +243,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="savePhoto:" destination="DGN-xh-ABk" eventType="touchUpInside" id="gch-NS-OVw"/>
+                                    <action selector="savePhoto:" destination="DGN-xh-ABk" eventType="touchUpInside" id="PL3-ce-OgY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua0-tL-3ut" userLabel="Play">
@@ -267,6 +267,12 @@
                                 </constraints>
                                 <connections>
                                     <action selector="opacity:" destination="DGN-xh-ABk" eventType="valueChanged" id="9wj-FU-b5i"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-z9-PcI">
+                                <rect key="frame" x="42" y="464" width="324" height="31"/>
+                                <connections>
+                                    <action selector="speed:" destination="DGN-xh-ABk" eventType="valueChanged" id="YDV-nP-QGv"/>
                                 </connections>
                             </slider>
                         </subviews>
@@ -294,9 +300,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="dLk-R7-3ra"/>
                                 <exclude reference="t98-Ox-KqX"/>
                                 <exclude reference="u7R-nF-Sf5"/>
+                                <exclude reference="dLk-R7-3ra"/>
                             </mask>
                         </variation>
                     </view>
@@ -304,6 +310,7 @@
                         <outlet property="cameraView" destination="o3C-Aa-kCe" id="i0I-50-Yik"/>
                         <outlet property="framesView" destination="2Dj-mO-uiO" id="Ndj-QP-LFU"/>
                         <outlet property="opacitySlider" destination="2nC-YK-Rs2" id="OXR-At-NWW"/>
+                        <outlet property="speedSlider" destination="3SD-z9-PcI" id="3ps-v0-TVj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="068-EB-w0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
