@@ -18,19 +18,22 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tutorialList =  DAO.sharedInstance.getTutorialList()
         
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        tutorialList =  DAO.sharedInstance.getTutorialList()
+    
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+        self.tableView.backgroundColor = UIColor.clearColor()
+        
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "celTapped:", name:"tapCell", object: nil)
     }
     
+    //segue para a pagina "how to"
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "toHow" {
@@ -47,19 +50,16 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    
     func celTapped(notification: NSNotification){
         
         println("celTapped")
         stepSelected = notification.object as! StepModel
 
         performSegueWithIdentifier("toCamera", sender: self)
-//        NSNotificationCenter.defaultCenter().removeObserver(self, name: "tapCell", object: nil)
+        //NSNotificationCenter.defaultCenter().removeObserver(self, name: "tapCell", object: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tutorialList.count
@@ -68,7 +68,6 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-
         
         var celula : TutorialCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TutorialCell
         
@@ -79,17 +78,23 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         celula.listSteps = tutorialList[indexPath.row].stepList
         celula.tutorialIndex = indexPath.row + 1
     
-    
-//                var scrollview = UIScrollView(frame: celula.bounds)
-//                scrollview.contentSize = CGSizeMake(celula.bounds.width * 5, celula.bounds.height) // will be 5 times as wide as the cell
-//                scrollview.pagingEnabled = true
-//        
-//                celula.contentView.addSubview(scrollview)
-        //
+        celula.backgroundColor = UIColor.clearColor()  // Adding this fixes the issue for iPad
+        
+  
+        //var scrollview = UIScrollView(frame: celula.bounds)
+        //scrollview.contentSize = CGSizeMake(celula.bounds.width * 5, celula.bounds.height) // will be 5 times as wide as the cell
+        //scrollview.pagingEnabled = true
+        //celula.contentView.addSubview(scrollview)
+        
         return celula
 
     }
 
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
     /*
     // MARK: - Navigation

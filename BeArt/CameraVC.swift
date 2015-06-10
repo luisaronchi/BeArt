@@ -17,31 +17,40 @@ class CameraVC: UIViewController
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var framesView: UIImageView!
     @IBOutlet weak var opacitySlider: UISlider!
-    var stillImageOutput = AVCaptureStillImageOutput()
+    @IBOutlet var speedSlider: UISlider!
+
     
     @IBAction func savePhoto(sender: AnyObject) {
         capturePicture()
     }
   
-    @IBOutlet var speedSlider: UISlider!
-
-    
+    var stillImageOutput = AVCaptureStillImageOutput()
     let captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
     var captureDevice : AVCaptureDevice?
     
-    //@IBOutlet var playPauseButton: UIButton!
-
     
     var step : StepModel = StepModel();
     
     var myImage = UIImage()
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //transforma o slider em vertical
+        var trans : CGAffineTransform = CGAffineTransformMakeRotation(CGFloat(M_PI_2));
+        opacitySlider.transform = trans;
+        
+        //esconde navbar
+        //navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        
+        //configs da camera
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
         
         let devices = AVCaptureDevice.devices()
@@ -71,7 +80,7 @@ class CameraVC: UIViewController
         if let device = captureDevice {
             if(device.lockForConfiguration(nil)) {
                 device.setFocusModeLockedWithLensPosition(value, completionHandler: { (time) -> Void in
-                    //
+                    
                 })
                 device.unlockForConfiguration()
             }
@@ -124,28 +133,10 @@ class CameraVC: UIViewController
         self.cameraView.layer.addSublayer(previewLayer)
         previewLayer?.frame = self.view.layer.frame
         captureSession.startRunning()
-
-    
-
-    
-        //transforma o slider em vertical
-        var trans : CGAffineTransform = CGAffineTransformMakeRotation(CGFloat(M_PI_2));
-        opacitySlider.transform = trans;
-        
-        //https://github.com/imaginary-cloud/CameraManager
-        
-        //define a view na qual a camera aparece
-//        CameraManager.sharedInstance.addPreviewLayerToView(self.cameraView)
-        //esconde navbar
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        
-
+        //fim das configs da camera
     }
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-    }
+    
 
     
     @IBAction func playAnimation(sender: UIButton) {
@@ -185,6 +176,7 @@ class CameraVC: UIViewController
         }
     }
     
+    //slider de opacidade
     @IBAction func opacity(sender: AnyObject) {
     
         let sliderValue = CGFloat(opacitySlider.value)
@@ -192,11 +184,14 @@ class CameraVC: UIViewController
     
     }
  
+
     
     @IBAction func back(sender: UIButton) {
+
         
-        self.navigationController?.popViewControllerAnimated(true)
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        
+//        self.navigationController?.popViewControllerAnimated(true)
+//        navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
     
@@ -242,12 +237,22 @@ class CameraVC: UIViewController
         
     }
     
-//    @IBAction func back(sender: UIButton) {
-//        
-//        self.navigationController?.popViewControllerAnimated(true)
-//        navigationController?.setNavigationBarHidden(false, animated: false)
-//        
-//    }
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //    @IBAction func back(sender: UIButton) {
+    //
+    //        self.navigationController?.popViewControllerAnimated(true)
+    //        navigationController?.setNavigationBarHidden(false, animated: false)
+    //
+    //    }
+    
+    //https://github.com/imaginary-cloud/CameraManager
+    
+    //define a view na qual a camera aparece
+    //        CameraManager.sharedInstance.addPreviewLayerToView(self.cameraView)
 
     
     /*

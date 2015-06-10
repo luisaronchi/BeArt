@@ -17,6 +17,8 @@ var materialList = ["pencil.png", "paper.jpg", "stand.jpeg"] //lista com nomes d
 override func viewDidLoad() {
     super.viewDidLoad()
 
+
+    
     self.collectionSupport.dataSource = self
     self.collectionSupport.delegate = self
     
