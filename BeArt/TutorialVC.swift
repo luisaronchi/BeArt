@@ -20,12 +20,13 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         tutorialList =  DAO.sharedInstance.getTutorialList()
         
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "celTapped:", name:"tapCell", object: nil)
     }

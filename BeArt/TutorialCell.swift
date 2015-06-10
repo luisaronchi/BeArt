@@ -17,9 +17,13 @@ class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
     var listSteps : Array<StepModel>!
     var tutorialIndex : Int!;
     
+
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
     }
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listSteps.count
