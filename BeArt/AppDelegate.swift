@@ -15,6 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var opacityslider: UIImage = UIImage (named: "sliderOpacity1")!
+        
+
+        var opacitybutton: UIImage = UIImage (named: "sliderOpacityButton")!
+        
+        
+//
+//        UISlider .appearance().setMaximumTrackImage(opacityslider, forState: UIControlState.Normal)
+//        UISlider .appearance().setMinimumTrackImage(opacityslider, forState: UIControlState.Normal)
+//        UISlider.appearance().setThumbImage(opacitybutton, forState: UIControlState.Normal)
+//        UISlider.appearance().setThumbImage(opacitybutton, forState: UIControlState.Highlighted)
+        
+        
+    
         return true
     }
 

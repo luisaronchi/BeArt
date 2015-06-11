@@ -19,6 +19,12 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         
         
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+    
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background1.png")!)
+        
+        
+        
         tutorialList =  DAO.sharedInstance.getTutorialList()
     
         
@@ -30,8 +36,19 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.tableView.backgroundColor = UIColor.clearColor()
         
         
+        
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "celTapped:", name:"tapCell", object: nil)
     }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
+    }
+    
     
     //segue para a pagina "how to"
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -74,6 +91,8 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         //celula.textLabel?.text = tutorialList[indexPath.row].name
         //celula.textLabel?.frame = CGRectMake(0, 0, 100, 100)
         celula.label.text = tutorialList[indexPath.row].name
+        celula.label.font = UIFont (name: "desyrel", size: 17)
+        
         celula.index = indexPath.row + 1
         celula.listSteps = tutorialList[indexPath.row].stepList
         celula.tutorialIndex = indexPath.row + 1

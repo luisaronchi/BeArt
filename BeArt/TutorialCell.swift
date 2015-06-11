@@ -37,6 +37,7 @@ class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         
         let step = listSteps[indexPath.row]
         
+        
         picture.stepPicture.image = UIImage(named: "tutorialId\(self.index!)/item\(indexPath.row)/" + listSteps[indexPath.row].image + ".png")
         
         

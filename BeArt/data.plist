@@ -58,7 +58,7 @@
 				</dict>
 			</array>
 			<key>name</key>
-			<string>Figuras Geométricas</string>
+			<string>Castle</string>
 			<key>stepTotal</key>
 			<integer>4</integer>
 			<key>stepCompleted</key>
@@ -96,7 +96,7 @@
 				</dict>
 			</array>
 			<key>name</key>
-			<string>Personagens</string>
+			<string>Character</string>
 			<key>stepTotal</key>
 			<integer>5</integer>
 			<key>stepCompleted</key>

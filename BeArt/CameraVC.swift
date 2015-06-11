@@ -142,7 +142,8 @@ class CameraVC: UIViewController
     @IBAction func playAnimation(sender: UIButton) {
         
         if sender.titleLabel!.text == "Play"{
-            sender.setTitle("Pause", forState: UIControlState.Normal)
+            sender.setTitle("Play", forState: UIControlState.Normal)
+            
             var imgListArray = [UIImage]()//cria um vetor de imagens
             
             var bundle : String! = NSBundle.mainBundle().pathForResource(step.idTutorial + "/" + step.frameFolder, ofType: "") //encontra o diretorio onde as frames estão
