@@ -52,6 +52,8 @@
 		ABDB2DA31B2B2CBB008721CE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB25A8271B0E5F0200C0EFAF /* Info.plist */; };
 		ABDB2DA41B2B2CED008721CE /* desyrel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABDB2D5A1B29FD85008721CE /* desyrel.ttf */; };
 		ABDB2DA61B2B449A008721CE /* how3.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDB2DA51B2B449A008721CE /* how3.png */; };
+		ABDB2DA91B2B6C2A008721CE /* xibBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDB2DA71B2B6C2A008721CE /* xibBackground.png */; };
+		ABDB2DAA1B2B6C2A008721CE /* xibImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDB2DA81B2B6C2A008721CE /* xibImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		ABDB2D9C1B2B24F7008721CE /* how1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = how1.png; sourceTree = "<group>"; };
 		ABDB2D9D1B2B24F7008721CE /* backgroundHow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundHow.png; sourceTree = "<group>"; };
 		ABDB2DA51B2B449A008721CE /* how3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = how3.png; sourceTree = "<group>"; };
+		ABDB2DA71B2B6C2A008721CE /* xibBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xibBackground.png; sourceTree = "<group>"; };
+		ABDB2DA81B2B6C2A008721CE /* xibImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xibImage.png; sourceTree = "<group>"; };
 		E7978F734311F179E57CC85C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FC4C763BE016A271ABF387BF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -276,6 +280,8 @@
 				ABDB2D9B1B2B24F7008721CE /* how2.png */,
 				ABDB2D9C1B2B24F7008721CE /* how1.png */,
 				ABDB2D9D1B2B24F7008721CE /* backgroundHow.png */,
+				ABDB2DA71B2B6C2A008721CE /* xibBackground.png */,
+				ABDB2DA81B2B6C2A008721CE /* xibImage.png */,
 			);
 			name = DesignBeArt;
 			sourceTree = "<group>";
@@ -382,8 +388,10 @@
 				AB25A8331B0E5F0200C0EFAF /* LaunchScreen.xib in Resources */,
 				ABDB2D981B2A1AB4008721CE /* sliderOpacityButton.png in Resources */,
 				ABDB2D941B2A1AB4008721CE /* iconApp.png in Resources */,
+				ABDB2DAA1B2B6C2A008721CE /* xibImage.png in Resources */,
 				ABDB2D8E1B2A0AE3008721CE /* tutorial1Etapa1.png in Resources */,
 				ABDB2DA61B2B449A008721CE /* how3.png in Resources */,
+				ABDB2DA91B2B6C2A008721CE /* xibBackground.png in Resources */,
 				AB25A8301B0E5F0200C0EFAF /* Images.xcassets in Resources */,
 				ABDB2D961B2A1AB4008721CE /* sliderfasterbutton.png in Resources */,
 				ABDB2D881B2A0AE3008721CE /* buttonPlay1.png in Resources */,
@@ -597,7 +605,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7978F734311F179E57CC85C /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BeArt/Info.plist;
@@ -612,7 +620,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 42426D494C9B71619CD68F0D /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BeArt/Info.plist;

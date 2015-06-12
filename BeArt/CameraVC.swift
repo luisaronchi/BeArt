@@ -141,10 +141,10 @@ class CameraVC: UIViewController
 
     
     @IBAction func playAnimation(sender: UIButton) {
+//        
+//        if sender.titleLabel!.text == "Play"{
+//            sender.setTitle("Play", forState: UIControlState.Normal)
         
-        if sender.titleLabel!.text == "Play"{
-            sender.setTitle("Play", forState: UIControlState.Normal)
-            
             var imgListArray = [UIImage]()//cria um vetor de imagens
             
             var bundle : String! = NSBundle.mainBundle().pathForResource(step.idTutorial + "/" + step.frameFolder, ofType: "") //encontra o diretorio onde as frames estão
@@ -171,12 +171,12 @@ class CameraVC: UIViewController
             framesView.startAnimating() //Depois de configura, Inicia a animacao
             //As imagens que farão parte da animção são as do vetor
         }
-        else{
-            sender.setTitle("Play", forState: UIControlState.Normal)
-            
-            
-        }
-    }
+//        else{
+//            sender.setTitle("Play", forState: UIControlState.Normal)
+//            
+//            
+//        }
+//    }
     
     //slider de opacidade
     @IBAction func opacity(sender: AnyObject) {
