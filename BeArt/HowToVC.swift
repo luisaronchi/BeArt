@@ -12,7 +12,7 @@ class HowToVC: UIViewController, UICollectionViewDataSource ,UICollectionViewDel
     
     
 @IBOutlet weak var collectionSupport: UICollectionView!
-var materialList = ["pencil.png", "paper.jpg", "stand.jpeg"] //lista com nomes das imagens
+var materialList = ["how1.png", "how2.png", "how3.png", "how4.png", "how5.png"] //lista com nomes das imagens
 
 override func viewDidLoad() {
     super.viewDidLoad()

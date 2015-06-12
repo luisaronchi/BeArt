@@ -12,18 +12,14 @@ class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
     
     @IBOutlet var label: UILabel!
     @IBOutlet var collectionView: UICollectionView!
-    var index:Int?
     
     var listSteps : Array<StepModel>!
     var tutorialIndex : Int!;
-    
-
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }
-    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listSteps.count
@@ -38,10 +34,10 @@ class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         let step = listSteps[indexPath.row]
         
         
-        picture.stepPicture.image = UIImage(named: "tutorialId\(self.index!)/item\(indexPath.row)/" + listSteps[indexPath.row].image + ".png")
+        picture.stepPicture.image = UIImage(named: "tutorial\(tutorialIndex!)Etapa\(indexPath.row + 1)" + ".png")
         
         
-        println("tutorialId\(self.index!)/item\(indexPath.row)/" + listSteps[indexPath.row].image + ".png")
+        println("tutorial\(tutorialIndex!)Etapa\(indexPath.row + 1)/" + ".png")
         
 
         picture.tag = indexPath.row;

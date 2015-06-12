@@ -29,11 +29,8 @@ class CameraVC: UIViewController
     var previewLayer : AVCaptureVideoPreviewLayer?
     var captureDevice : AVCaptureDevice?
     
-    
     var step : StepModel = StepModel();
-    
     var myImage = UIImage()
-    
     
     override func viewDidLoad()
     {
@@ -52,6 +49,7 @@ class CameraVC: UIViewController
         
         //configs da camera
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
+        
         
         let devices = AVCaptureDevice.devices()
         
@@ -129,9 +127,12 @@ class CameraVC: UIViewController
             println("error: \(err?.localizedDescription)")
         }
         
+        cameraView.backgroundColor = UIColor.blackColor()
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        self.cameraView.layer.addSublayer(previewLayer)
-        previewLayer?.frame = self.view.layer.frame
+        previewLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill;
+
+        previewLayer?.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
+        cameraView.layer.addSublayer(previewLayer)
         captureSession.startRunning()
         //fim das configs da camera
     }

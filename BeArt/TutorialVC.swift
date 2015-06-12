@@ -37,7 +37,6 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         
         
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "celTapped:", name:"tapCell", object: nil)
     }
     
@@ -85,15 +84,18 @@ class TutorialVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
+        var textLabel: UILabel!
+
         var celula : TutorialCell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! TutorialCell
         
         //celula.textLabel?.text = tutorialList[indexPath.row].name
         //celula.textLabel?.frame = CGRectMake(0, 0, 100, 100)
-        celula.label.text = tutorialList[indexPath.row].name
-        celula.label.font = UIFont (name: "desyrel", size: 17)
+        //celula.label.text = tutorialList[indexPath.row].name
+        //celula.label.font = UIFont (name: "desyrel", size: 17)
         
-        celula.index = indexPath.row + 1
+        celula.textLabel?.text = tutorialList[indexPath.row].name
+        celula.textLabel?.font = UIFont (name: "desyrel", size: 40)
+        
         celula.listSteps = tutorialList[indexPath.row].stepList
         celula.tutorialIndex = indexPath.row + 1
     
