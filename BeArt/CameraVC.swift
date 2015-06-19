@@ -18,7 +18,10 @@ class CameraVC: UIViewController
     @IBOutlet weak var framesView: UIImageView!
     @IBOutlet weak var opacitySlider: UISlider!
     @IBOutlet var speedSlider: UISlider!
+    
+    var botone : UIButton!;
 
+    
     
     @IBAction func savePhoto(sender: AnyObject) {
         capturePicture()
@@ -29,13 +32,20 @@ class CameraVC: UIViewController
     var previewLayer : AVCaptureVideoPreviewLayer?
     var captureDevice : AVCaptureDevice?
     
+    var frameSpeed : Float!;
+    var frameIndex : Int = 0;
+    var isPaused : Bool = false;
+    var started : Bool = false;
+    var timerCount : Int = 0;
+    
+    
     var step : StepModel = StepModel();
     var myImage = UIImage()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+    
         // Do any additional setup after loading the view, typically from a nib.
         
         
@@ -138,13 +148,21 @@ class CameraVC: UIViewController
     }
     
     
-
-    
     @IBAction func playAnimation(sender: UIButton) {
+        
+        botone = sender;
+        
 //        
 //        if sender.titleLabel!.text == "Play"{
 //            sender.setTitle("Play", forState: UIControlState.Normal)
         
+        
+            
+            // if  n <= 50 {
+        
+        
+        if(!started){
+            
             var imgListArray = [UIImage]()//cria um vetor de imagens
             
             var bundle : String! = NSBundle.mainBundle().pathForResource(step.idTutorial + "/" + step.frameFolder, ofType: "") //encontra o diretorio onde as frames estão
@@ -159,17 +177,45 @@ class CameraVC: UIViewController
                 imgListArray.append(imagem!)//coloca ela no vetor
             }
             
+            started = true;
+            frameIndex = 0;
+            
             //a velocidade mais devagar é 3 segundos por frame
-            speedSlider.maximumValue = (3.0 * Float(n)) //valor maximo(depende do numero de frames)
+            speedSlider.maximumValue = 3.0 //valor maximo(depende do numero de frames)
             speedSlider.value = speedSlider.maximumValue/2 //valor inicial é sempre a metade da mais devagar
-            
-            // if  n <= 50 {
-            
             framesView.animationImages = imgListArray as [AnyObject]
+            frameSpeed = speedSlider.maximumValue - speedSlider.value
+            framesView.image = framesView.animationImages?.first as? UIImage;
+            sender.selected = true;
+            processAnimation();
+            
+        }
+        else{
+            if(isPaused){
+                sender.selected = true;
+                processAnimation();
+                isPaused = false;
+            }
+            else{
+                sender.selected = false;
+                isPaused = true;
+            }
+        }
+        
+        
+        
+        
+        
+            /*
             framesView.animationDuration = NSTimeInterval(speedSlider.maximumValue - speedSlider.value) //tempo de duração da animação - PS: valor maximo na vdd tem que ser o minimo, entao tem que fazer essa subtração pra inverter
             framesView.animationRepeatCount = 0 //Quantas vezes repete
             framesView.startAnimating() //Depois de configura, Inicia a animacao
             //As imagens que farão parte da animção são as do vetor
+
+            */
+        
+        
+        
         }
 //        else{
 //            sender.setTitle("Play", forState: UIControlState.Normal)
@@ -177,6 +223,36 @@ class CameraVC: UIViewController
 //            
 //        }
 //    }
+    
+    func processAnimation(){
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(frameSpeed), target: self, selector: Selector("nextFrame"), userInfo: nil, repeats: false)
+        timerCount++;
+        
+    }
+    
+    func nextFrame(){
+        if(timerCount>1){
+            timerCount--;
+            return;
+        }
+        if(isPaused){
+            timerCount--;
+            return;
+        }
+        frameIndex++;
+        if(frameIndex >= framesView.animationImages?.count){
+            timerCount--;
+            botone.selected = false;
+            
+            //TRECHO PARA FAZER COISINHAS QUANDO A IMAGEM TERMINAR DE RODAR AS ANIMACOES TODAS
+            fazerCoisinhas();
+            
+            return;
+        }
+        framesView.image = framesView.animationImages?[frameIndex] as? UIImage;
+        var timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(frameSpeed), target: self, selector: Selector("nextFrame"), userInfo: nil, repeats: false)
+    }
     
     //slider de opacidade
     @IBAction func opacity(sender: AnyObject) {
@@ -186,6 +262,9 @@ class CameraVC: UIViewController
     
     }
  
+    func fazerCoisinhas(){
+        
+    }
 
     
     @IBAction func back(sender: UIButton) {
@@ -232,10 +311,8 @@ class CameraVC: UIViewController
     //slider VELOCIDADE
     @IBAction func speed(sender: AnyObject) {
         
-        framesView.animationDuration = NSTimeInterval(speedSlider.maximumValue - speedSlider.value)
-        println(speedSlider.maximumValue - speedSlider.value)
-        framesView.startAnimating()
-        //UIView.animateWithDuration(NSTimeInterval(scale), animations: {self.sliderOutlet.setValue(Float(currentSong.playbackDuration), animated: true)})
+        
+        frameSpeed = speedSlider.maximumValue - speedSlider.value
         
     }
     

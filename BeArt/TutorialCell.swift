@@ -10,7 +10,6 @@ import UIKit
 
 class TutorialCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet var label: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
     var listSteps : Array<StepModel>!

@@ -421,7 +421,7 @@ Tip: draw so that the pencil doesn’t mark the paper</string>
                                     <action selector="opacity:" destination="DGN-xh-ABk" eventType="valueChanged" id="9wj-FU-b5i"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-z9-PcI">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-z9-PcI">
                                 <rect key="frame" x="70" y="467" width="460" height="31"/>
                                 <color key="tintColor" red="0.081321022729999998" green="0.081321022729999998" blue="0.081321022729999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -442,13 +442,13 @@ Tip: draw so that the pencil doesn’t mark the paper</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slower" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSq-8Q-neb">
-                                <rect key="frame" x="88" y="492" width="49" height="22"/>
+                                <rect key="frame" x="88" y="492" width="48.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Desyrel" family="Desyrel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-h9-MOw">
-                                <rect key="frame" x="501" y="64" width="58" height="22"/>
+                                <rect key="frame" x="500" y="63" width="57.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Desyrel" family="Desyrel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -462,6 +462,7 @@ Tip: draw so that the pencil doesn’t mark the paper</string>
                                 <state key="normal" image="buttonPlay1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="buttonBack1.png"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="TqL-5p-p0S"/>
@@ -513,6 +514,36 @@ Tip: draw so that the pencil doesn’t mark the paper</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="068-EB-w0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1918" y="-388"/>
+        </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="i8M-Y6-9f3">
+            <objects>
+                <viewController id="zjZ-F0-uui" customClass="PopupViewController" customModule="BeArt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="98d-KD-ccB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kqr-Pe-3aA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UrP-3S-dy5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfe-tS-6TT">
+                                <rect key="frame" x="255" y="293" width="91" height="30"/>
+                                <state key="normal" title="Show PopUp">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="popUpView" destination="UrP-3S-dy5" id="Des-zV-YFD"/>
+                        <outlet property="showPopupBtn" destination="pfe-tS-6TT" id="BC3-GC-fkf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQw-Z8-azH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="369"/>
         </scene>
     </scenes>
     <resources>
