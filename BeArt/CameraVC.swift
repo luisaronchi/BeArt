@@ -224,10 +224,24 @@ class CameraVC: UIViewController
 //        }
 //    }
     
+    // Funcao responsável por iniciar/retomar a animaçao
+    // Quando o botao é tocado é inicializada a funcao NEXTFRAME, que fica se chamando a cada intervalo de troca de frame (para trocar o frame).
+    // Chamemos isso de processamento
+    // Quando o botao é tocado enquanto o processamento ocorre, indicamos que deverá pausar, deixar o valor de isPaused como TRUE
+    // Essa verificacao é feita quando entra no nextFrame() (vide "if(isPaused)"). Sendo TRUE o processamento é apagado
+    
+    // timerCount gerencia quantos processamentos estao sendo rodados, só podemos ter no máximo 1
+    // (Se o jogador tocar no botao varias vezes rapidamente, ele acaba criando mais processamentos sem ter apagado o que estava rodando (porque nao deu tempo de verificar em nextFrame(),
+    // por isso essa verificaçao é importante. Caso timerCount esteja maior do que 1, tal processamento é encerrado)
+    
+    // A funcao "NSTimer.scheduledTimerWithTimeInterval" é responsavel por chamar o nextFrame (trocar de frame) a cada frameSpeed segundos (frameSpeed é determinado de acordo com a velocidade, que por sua vez é de acordo com o slider)
+    
     func processAnimation(){
-        
         var timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(frameSpeed), target: self, selector: Selector("nextFrame"), userInfo: nil, repeats: false)
         timerCount++;
+        
+        
+        //timerCount ++ (mais um) =
         
     }
     

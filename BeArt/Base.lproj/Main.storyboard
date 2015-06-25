@@ -442,13 +442,13 @@ Tip: draw so that the pencil doesn’t mark the paper</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slower" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSq-8Q-neb">
-                                <rect key="frame" x="88" y="492" width="48.5" height="21.5"/>
+                                <rect key="frame" x="88" y="492" width="49" height="22"/>
                                 <fontDescription key="fontDescription" name="Desyrel" family="Desyrel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-h9-MOw">
-                                <rect key="frame" x="500" y="63" width="57.5" height="21.5"/>
+                                <rect key="frame" x="500" y="63" width="58" height="22"/>
                                 <fontDescription key="fontDescription" name="Desyrel" family="Desyrel" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
